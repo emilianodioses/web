@@ -4,52 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emiliano Dioses - Innovación en Software</title>
-    <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilo para reflejar el diseño */
+        /* Estilo general */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #0a0a0a; /* Fondo oscuro */
-            color: #ffffff; /* Texto blanco */
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
+        /* Header */
         header {
             text-align: center;
-            padding: 50px 20px;
+            padding: 80px 20px;
             background: linear-gradient(135deg, #0a0a0a, #0d3b66);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             color: #00ffc3; /* Neon verde-azul */
-            text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3;
+            text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 40px #00ffc3;
         }
 
+        header p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #ffffff;
+        }
+
+        /* Fondo abstracto tipo software */
         .abstract-bg {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #09203f, #537895); /* Fondo degradado */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 300px;
-            background: url('abstract-bg.jpg') no-repeat center center;
-            background-size: cover;
+            overflow: hidden;
         }
 
+        .abstract-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(0, 255, 195, 0.2) 10%, transparent 60%);
+            animation: glow 5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                transform: translate(-20%, -20%) scale(1);
+            }
+            100% {
+                transform: translate(20%, 20%) scale(1.2);
+            }
+        }
+
+        /* Botones */
         .buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 30px;
+            margin-top: -40px;
         }
 
         .buttons a {
             text-decoration: none;
             padding: 15px 30px;
             border: 2px solid #00ffc3;
-            border-radius: 30px;
+            border-radius: 30px; /* Bordes redondeados */
             color: #00ffc3;
+            font-size: 1.2rem;
             font-weight: bold;
+            text-transform: uppercase;
             transition: all 0.3s ease;
         }
 
@@ -58,6 +90,7 @@
             color: #0a0a0a;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -73,7 +106,12 @@
         <p>Innovación en Software y Mejora de Procesos</p>
     </header>
 
-    <section class="abstract-bg"></section>
+    <section class="abstract-bg">
+        <!-- Elementos abstractos dinámicos aquí -->
+        <div>
+            <p style="color: #ffffff; font-size: 2rem; text-align: center;">Transformando ideas en soluciones digitales</p>
+        </div>
+    </section>
 
     <section class="buttons">
         <a href="#about">Sobre Mí</a>
@@ -86,6 +124,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
