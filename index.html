@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Fondo amarillo suave con transparencia para todos los componentes */
+			/* Fondo amarillo suave con transparencia */
 			body {
 				background-color: rgba(255, 255, 0, 0.1); /* Fondo general */
 				margin: 0;
@@ -25,23 +25,37 @@
 			#intro,
 			footer {
 				background-color: rgba(255, 255, 0, 0.1); /* Fondo amarillo suave */
-				padding: 20px; /* Añade espacio interno para mejor visualización */
-				border-radius: 10px; /* Bordes redondeados para un diseño más armónico */
+				padding: 20px; /* Añade espacio interno */
+				border-radius: 10px; /* Bordes redondeados */
 			}
 
 			#nav ul li a {
-				background-color: rgba(255, 255, 0, 0.2); /* Fondo ligeramente más intenso para los enlaces */
+				background-color: rgba(255, 255, 0, 0.2);
 				padding: 10px;
 				border-radius: 5px;
 				text-decoration: none;
 			}
 
 			#nav ul li a:hover {
-				background-color: rgba(255, 255, 0, 0.3); /* Cambio en hover */
+				background-color: rgba(255, 255, 0, 0.3);
 			}
 
 			section {
 				margin-bottom: 20px; /* Espaciado entre secciones */
+			}
+
+			img {
+				width: auto; /* Mantiene la relación de aspecto */
+				height: auto;
+				max-width: 100%; /* Evita que la imagen sea más grande que su contenedor */
+				display: block; /* Evita los espacios blancos alrededor de la imagen */
+				margin: 0 auto; /* Centra la imagen */
+			}
+
+			/* Ocultar cualquier elemento visual indeseado */
+			#banner::before,
+			#banner::after {
+				content: none; /* Elimina posibles corchetes o elementos decorativos */
 			}
 		</style>
 	</head>
@@ -69,6 +83,7 @@
 						<header>
 							<h2>El futuro llego hace rato</h2>
 							<p>Es hora de levantarse querido!</p>
+							<img src="assets/images/banner.jpg" alt="Banner"> <!-- Ajusta la ruta de la imagen -->
 						</header>
 					</section>
 
@@ -112,3 +127,4 @@
 		</div>
 	</body>
 </html>
+
