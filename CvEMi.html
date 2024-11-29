@@ -28,18 +28,18 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 150px;
+            width: 100px;
             border-radius: 50%; /* Imagen redondeada */
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #00ffc3;
             text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 40px #00ffc3;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-top: 10px;
             color: #ffffff;
         }
@@ -75,11 +75,45 @@
             color: #ffffff;
             font-size: 0.9rem;
         }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 10px;
+            }
+
+            header img {
+                width: 80px;
+                top: 10px;
+                left: 10px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .cv-section {
+                margin: 20px 10px;
+                padding: 15px;
+            }
+
+            .cv-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .cv-section p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="images\fotopagina.png" alt="Emiliano Dioses">
+        <img src="images/fotopagina.png" alt="Emiliano Dioses">
         <h1>Mi CV</h1>
         <p>Conoce mi trayectoria profesional y mis experiencias</p>
     </header>
@@ -105,4 +139,5 @@
     </footer>
 </body>
 </html>
+
 
