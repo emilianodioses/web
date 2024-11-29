@@ -24,13 +24,13 @@
         }
 
         header h1 {
-            font-size: 4rem;
+            font-size: 3rem;
             color: #00ffc3; /* Neon verde-azul */
             text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 40px #00ffc3;
         }
 
         header p {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-top: 10px;
             color: #ffffff;
         }
@@ -38,7 +38,7 @@
         /* Fondo abstracto tipo software */
         .abstract-bg {
             position: relative;
-            height: 400px;
+            height: 300px;
             background: linear-gradient(135deg, #09203f, #537895); /* Fondo degradado */
             display: flex;
             justify-content: center;
@@ -69,9 +69,11 @@
         /* Botones */
         .buttons {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px; /* Ajusta la posición de los botones */
+            flex-wrap: wrap;
+            justify-content: center; /* Centra los botones */
+            gap: 20px; /* Espaciado entre botones */
+            margin-top: 30px; /* Ajusta la posición de los botones */
+            padding: 0 20px; /* Margen interno para evitar desbordes en pantallas pequeñas */
         }
 
         .buttons a {
@@ -80,10 +82,13 @@
             border: 2px solid #00ffc3;
             border-radius: 30px; /* Bordes redondeados */
             color: #00ffc3;
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
+            text-align: center;
             transition: all 0.3s ease;
+            flex: 1 1 calc(33.333% - 40px); /* Botones responsive: ajustan su tamaño */
+            max-width: 200px; /* Ancho máximo por botón */
         }
 
         .buttons a:hover {
@@ -99,6 +104,26 @@
             color: #ffffff;
             font-size: 0.9rem;
         }
+
+        /* Media Queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .abstract-bg {
+                height: 200px;
+            }
+
+            .buttons a {
+                flex: 1 1 100%; /* Botones ocupan toda la línea */
+                max-width: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -108,9 +133,8 @@
     </header>
 
     <section class="abstract-bg">
-        <!-- Elementos abstractos dinámicos aquí -->
         <div>
-            <p style="color: #ffffff; font-size: 2rem; text-align: center;">Transformando ideas en soluciones digitales</p>
+            <p style="color: #ffffff; font-size: 1.5rem; text-align: center;">Transformando ideas en soluciones digitales</p>
         </div>
     </section>
 
