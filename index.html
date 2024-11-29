@@ -11,51 +11,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Fondo amarillo suave con transparencia */
+			/* Fondo blanco general */
 			body {
-				background-color: rgba(255, 255, 0, 0.1); /* Fondo general */
+				background-color: white; /* Fondo blanco */
 				margin: 0;
 				padding: 0;
 			}
 
-			#page-wrapper,
-			#header,
-			#nav,
-			#banner,
-			#intro,
-			footer {
-				background-color: rgba(255, 255, 0, 0.1); /* Fondo amarillo suave */
-				padding: 20px; /* Añade espacio interno */
+			/* Banner translúcido al 90% */
+			#banner {
+				background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco translúcido */
+				padding: 20px;
 				border-radius: 10px; /* Bordes redondeados */
 			}
 
+			/* Botones del menú sin fondo y con estilo moderno */
 			#nav ul li a {
-				background-color: rgba(255, 255, 0, 0.2);
-				padding: 10px;
-				border-radius: 5px;
-				text-decoration: none;
+				background-color: transparent; /* Sin fondo */
+				color: black; /* Texto negro */
+				padding: 10px 15px; /* Espaciado interno */
+				border: 1px solid black; /* Borde fino negro */
+				border-radius: 10px; /* Bordes redondeados */
+				text-decoration: none; /* Sin subrayado */
+				transition: all 0.3s ease; /* Transición suave */
 			}
 
+			/* Estilo al pasar el mouse sobre los botones del menú */
 			#nav ul li a:hover {
-				background-color: rgba(255, 255, 0, 0.3);
+				background-color: black; /* Fondo negro */
+				color: white; /* Texto blanco */
 			}
 
+			/* Margen entre secciones */
 			section {
-				margin-bottom: 20px; /* Espaciado entre secciones */
-			}
-
-			img {
-				width: auto; /* Mantiene la relación de aspecto */
-				height: auto;
-				max-width: 100%; /* Evita que la imagen sea más grande que su contenedor */
-				display: block; /* Evita los espacios blancos alrededor de la imagen */
-				margin: 0 auto; /* Centra la imagen */
-			}
-
-			/* Ocultar cualquier elemento visual indeseado */
-			#banner::before,
-			#banner::after {
-				content: none; /* Elimina posibles corchetes o elementos decorativos */
+				margin-bottom: 20px;
 			}
 		</style>
 	</head>
@@ -81,9 +70,8 @@
 					<!-- Banner -->
 					<section id="banner">
 						<header>
-							<h2>El futuro llego hace rato</h2>
+							<h2>El futuro llegó hace rato</h2>
 							<p>Es hora de levantarse querido!</p>
-							<img src="assets/images/banner.jpg" alt="Banner"> <!-- Ajusta la ruta de la imagen -->
 						</header>
 					</section>
 
@@ -127,4 +115,5 @@
 		</div>
 	</body>
 </html>
+
 
