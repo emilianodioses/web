@@ -19,7 +19,7 @@
         /* Header */
         header {
             position: relative;
-            height: 300px; /* Ajusta la altura del header */
+            height: 200px; /* Reduzco la altura del header para que la imagen se vea mejor */
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -28,12 +28,13 @@
 
         header img {
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 50%;
-            width: 100%;
-            height: auto;
-            transform: translate(-50%, -50%);
-            object-fit: contain; /* Asegura que la imagen mantenga la relación de aspecto y se vea completa */
+            transform: translateX(-50%);
+            width: auto;
+            height: 100%;
+            object-fit: contain; /* Asegura que la imagen mantenga la relación de aspecto sin recortar */
+            object-position: center; /* Centra la imagen dentro del header */
             z-index: -1; /* Coloca la imagen detrás del contenido del header */
         }
 
@@ -93,7 +94,7 @@
         /* Media Queries para pantallas pequeñas */
         @media (max-width: 768px) {
             header {
-                height: 200px; /* Reduce la altura del header para pantallas pequeñas */
+                height: 150px; /* Reduce la altura del header para pantallas pequeñas */
             }
 
             header .header-content {
@@ -153,5 +154,6 @@
     </footer>
 </body>
 </html>
+
 
 
