@@ -131,6 +131,46 @@
             color: #0a0a0a;
         }
 
+        /* Avatar flotante */
+        .floating-avatar {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 195, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .floating-avatar:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-avatar::after {
+            content: "Implementar tecnología implica considerar varios aspectos importantes. Aunque es posible buscar opciones económicas, hay costos básicos que no se pueden evitar, como el servidor, dominio y hosting, que suelen ser pagos recurrentes. A esto se suman los costos iniciales de desarrollo de la solución, así como el mantenimiento, la capacitación y el soporte técnico, cada uno con su propio impacto en el presupuesto.\A\A Además, es importante tener en cuenta que muchas soluciones tecnológicas requieren la integración de APIs o servicios de terceros, los cuales pueden tener costos adicionales dependiendo del uso, licencias o volumen de solicitudes.\A\A También, la elección de tecnologías puede implicar gastos asociados, ya sea por licencias específicas, integraciones con otros sistemas o servicios adicionales. Por supuesto, los costos totales estarán directamente relacionados con la complejidad de la solución requerida: mientras más personalizada o avanzada sea, mayor será la inversión necesaria.\A\A Sin embargo, es clave destacar que estas inversiones están orientadas a mejorar la eficiencia, la productividad y la experiencia del cliente, lo cual puede traer un retorno positivo a mediano y largo plazo. Por último, la planificación, la comunicación clara y un buen entendimiento entre el cliente y el desarrollador son esenciales para evitar malentendidos y garantizar el éxito del proyecto.";
+            position: absolute;
+            top: -10px;
+            left: 100px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+            white-space: pre-line;
+            z-index: 1000;
+        }
+
+        .floating-avatar:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -189,8 +229,11 @@
         <a href="ideachat.html">Y cual es tu idea?</a>
     </section>
 
+    <img src="images/fotopagina.png" alt="Avatar de Emiliano" class="floating-avatar">
+
     <footer>
         &copy; 2024 Emiliano Dioses. Todos los derechos reservados.
     </footer>
 </body>
 </html>
+
