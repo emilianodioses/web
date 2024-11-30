@@ -6,20 +6,13 @@
     <title>Emiliano Dioses - Innovación en Software</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Metaetiquetas SEO -->
-    <meta name="description" content="Soluciones tecnológicas variadas desde sitios web hasta sistemas para pequeñas empresas, utilizando inteligencia artificial y computación en la nube.">
-    <meta name="keywords" content="tecnología, soluciones, web, inteligencia artificial, Rosario, logística, mejora continua">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="tu_codigo_de_verificacion">
-    <meta name="google-site-verification" content="google3a9c1c6871b02492">
-
     <style>
         /* Estilo general */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif; /* Fuente Montserrat */
-            background-color: #0a0a0a; /* Fondo oscuro */
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -29,11 +22,12 @@
             text-align: center;
             padding: 80px 20px;
             background: linear-gradient(135deg, #0a0a0a, #0d3b66);
+            position: relative;
         }
 
         header h1 {
             font-size: 3rem;
-            color: #00ffc3; /* Neon verde-azul */
+            color: #00ffc3;
             text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 40px #00ffc3;
         }
 
@@ -43,11 +37,44 @@
             color: #ffffff;
         }
 
+        /* Botón Tecnología */
+        .tech-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border: 2px solid #00ffc3;
+            border-radius: 30px;
+            color: #00ffc3;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: blink 0.5s infinite;
+        }
+
+        .tech-button:hover {
+            background-color: #00ffc3;
+            color: #0a0a0a;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
         /* Fondo abstracto tipo software */
         .abstract-bg {
             position: relative;
             height: 300px;
-            background: linear-gradient(135deg, #09203f, #537895); /* Fondo degradado */
+            background: linear-gradient(135deg, #09203f, #537895);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,25 +105,25 @@
         .buttons {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Centra los botones */
-            gap: 20px; /* Espaciado entre botones */
-            margin-top: 30px; /* Ajusta la posición de los botones */
-            padding: 0 20px; /* Margen interno para evitar desbordes en pantallas pequeñas */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 0 20px;
         }
 
         .buttons a {
             text-decoration: none;
             padding: 15px 30px;
             border: 2px solid #00ffc3;
-            border-radius: 30px; /* Bordes redondeados */
+            border-radius: 30px;
             color: #00ffc3;
             font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
             transition: all 0.3s ease;
-            flex: 1 1 calc(33.333% - 40px); /* Botones responsive: ajustan su tamaño */
-            max-width: 200px; /* Ancho máximo por botón */
+            flex: 1 1 calc(33.333% - 40px);
+            max-width: 200px;
         }
 
         .buttons a:hover {
@@ -128,8 +155,15 @@
             }
 
             .buttons a {
-                flex: 1 1 100%; /* Botones ocupan toda la línea */
+                flex: 1 1 100%;
                 max-width: none;
+            }
+
+            .tech-button {
+                top: 5px;
+                right: 5px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -138,6 +172,7 @@
     <header>
         <h1>Emiliano Dioses</h1>
         <p>Innovación en Software y Mejora de Procesos</p>
+        <a href="#tecnologia" class="tech-button">Tecnología</a>
     </header>
 
     <section class="abstract-bg">
