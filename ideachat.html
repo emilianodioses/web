@@ -88,33 +88,16 @@
         }
     </style>
     <script>
-        async function generateIdeaResponse() {
+        function generateIdeaResponse() {
             const userIdea = document.getElementById('userIdea').value;
             const output = document.getElementById('ideaOutput');
             if (userIdea) {
-                try {
-                    // Enviar la idea al servidor
-                    const response = await fetch('guardar_idea.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        body: `idea=${encodeURIComponent(userIdea)}`
-                    });
-
-                    if (response.ok) {
-                        const whatsappMessage = `Hola, te paso mi idea: (${userIdea})`;
-                        const whatsappUrl = `https://wa.me/5493416011409?text=${encodeURIComponent(whatsappMessage)}`;
-                        output.innerHTML = `
-                            <p>Tu idea: <strong>${userIdea}</strong></p>
-                            <button onclick="window.open('${whatsappUrl}', '_blank')">OK! Hagámoslo realidad</button>
-                        `;
-                    } else {
-                        output.textContent = 'Hubo un error al guardar tu idea. Por favor intenta nuevamente.';
-                    }
-                } catch (error) {
-                    output.textContent = 'Hubo un error al procesar tu idea. Por favor intenta nuevamente.';
-                }
+                const whatsappMessage = `Hola, te paso mi idea: (${userIdea})`;
+                const whatsappUrl = `https://wa.me/5493416011409?text=${encodeURIComponent(whatsappMessage)}`;
+                output.innerHTML = `
+                    <p>Tu idea: <strong>${userIdea}</strong></p>
+                    <button onclick="window.open('${whatsappUrl}', '_blank')">OK! Hagámoslo realidad</button>
+                `;
                 output.style.display = 'block';
             } else {
                 output.textContent = 'Por favor, ingresa una idea para recibir una sugerencia.';
