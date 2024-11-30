@@ -30,11 +30,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 85%; 
-            height: auto;
-            max-height: 600px; /* Para evitar que se vea estirada */
-            object-fit: cover; /* Mantiene el rostro visible y elimina el resto no deseado */
             transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Asegura que la imagen llene el header y elimine las partes no deseadas */
+            object-position: center; /* Centra la imagen para mantener el enfoque en el rostro */
             z-index: -1; /* Coloca la imagen detrás del contenido del header */
         }
 
@@ -97,6 +97,11 @@
                 height: 250px; /* Reduce la altura del header para pantallas pequeñas */
             }
 
+            header img {
+                width: 85%; /* Ajusta la imagen al 85% para pantallas pequeñas */
+                height: auto;
+            }
+
             header .header-content {
                 padding: 20px 10px;
             }
@@ -120,6 +125,16 @@
 
             .cv-section p {
                 font-size: 1rem;
+            }
+        }
+
+        /* Media Queries para pantallas más grandes */
+        @media (min-width: 769px) {
+            header img {
+                width: 110%; /* Aumenta ligeramente el ancho de la imagen para que se vea completa y se enfoque en el rostro */
+                height: auto;
+                object-fit: cover; /* Asegura que la imagen siempre llene el espacio */
+                object-position: center;
             }
         }
     </style>
@@ -154,6 +169,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
