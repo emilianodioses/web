@@ -19,10 +19,33 @@
 
         /* Header */
         header {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #0a0a0a, #0d3b66);
             position: relative;
+            height: 400px; /* Altura del header */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Mantener el enfoque en el rostro */
+            object-position: center;
+            z-index: -1; /* Coloca la imagen detrás del contenido del header */
+        }
+
+        header .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            background: rgba(10, 10, 10, 0.7); /* Fondo oscuro semitransparente para resaltar el texto */
+            border-radius: 15px;
         }
 
         header h1 {
@@ -182,6 +205,14 @@
 
         /* Media Queries para pantallas pequeñas */
         @media (max-width: 768px) {
+            header {
+                height: 250px; /* Ajustar la altura del header para pantallas pequeñas */
+            }
+
+            header img {
+                width: 85%; /* Ajuste de imagen para pantallas pequeñas */
+            }
+
             header h1 {
                 font-size: 2rem;
             }
@@ -210,9 +241,12 @@
 </head>
 <body>
     <header>
-        <h1>Emiliano Dioses</h1>
-        <p>Innovación en Software y Mejora de Procesos</p>
-        <a href="tecnologia.html" class="tech-button">Tecnologías</a>
+        <img src="images/fotopagina.png" alt="Emiliano Dioses">
+        <div class="header-content">
+            <h1>Emiliano Dioses</h1>
+            <p>Innovación en Software y Mejora de Procesos</p>
+            <a href="tecnologia.html" class="tech-button">Tecnologías</a>
+        </div>
     </header>
 
     <section class="abstract-bg">
@@ -236,4 +270,3 @@
     </footer>
 </body>
 </html>
-
