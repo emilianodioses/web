@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mejoras Tecnológicas - Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #0a0a0a, #0d3b66);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #00ffc3;
+            text-shadow: 0 0 10px #00ffc3, 0 0 20px #00ffc3, 0 0 40px #00ffc3;
+        }
+
+        /* Caja de idea */
+        .idea-input {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .idea-input input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .idea-input button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            background-color: #00ffc3;
+            color: #0a0a0a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .idea-input button:hover {
+            background-color: #00bfa5;
+        }
+
+        .idea-output {
+            margin-top: 20px;
+            padding: 15px;
+            background: linear-gradient(135deg, #537895, #09203f);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 255, 195, 0.5);
+            text-align: center;
+            display: none;
+        }
+
+        .idea-output button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background-color: #00ffc3;
+            color: #0a0a0a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .idea-output button:hover {
+            background-color: #00bfa5;
+        }
+    </style>
+    <script>
+        async function generateIdeaResponse() {
+            const userIdea = document.getElementById('userIdea').value;
+            const output = document.getElementById('ideaOutput');
+            if (userIdea) {
+                try {
+                    // Enviar la idea al servidor
+                    const response = await fetch('guardar_idea.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `idea=${encodeURIComponent(userIdea)}`
+                    });
+
+                    if (response.ok) {
+                        const whatsappMessage = `Hola, te paso mi idea: (${userIdea})`;
+                        const whatsappUrl = `https://wa.me/5493416011409?text=${encodeURIComponent(whatsappMessage)}`;
+                        output.innerHTML = `
+                            <p>Tu idea: <strong>${userIdea}</strong></p>
+                            <button onclick="window.open('${whatsappUrl}', '_blank')">OK! Hagámoslo realidad</button>
+                        `;
+                    } else {
+                        output.textContent = 'Hubo un error al guardar tu idea. Por favor intenta nuevamente.';
+                    }
+                } catch (error) {
+                    output.textContent = 'Hubo un error al procesar tu idea. Por favor intenta nuevamente.';
+                }
+                output.style.display = 'block';
+            } else {
+                output.textContent = 'Por favor, ingresa una idea para recibir una sugerencia.';
+                output.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Impacto de la Tecnología en tu Negocio</h1>
+        <p>Explora cómo la tecnología puede mejorar diferentes áreas de tu empresa.</p>
+    </header>
+
+    <section class="idea-input">
+        <input type="text" id="userIdea" placeholder="Ingresa tu idea aquí...">
+        <button onclick="generateIdeaResponse()">Enviar Idea</button>
+        <div class="idea-output" id="ideaOutput"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 Emiliano Dioses. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
